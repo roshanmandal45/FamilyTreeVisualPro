@@ -9,14 +9,14 @@ export const family: Record<string, Person> = {
 
 A:{
 id:"A",
-name:"Grandfather",
+name:"RatiLal Mandal",
 image:"/people/a.jpg",
 children:["C","D","E"]
 },
 
 B:{
 id:"B",
-name:"Grandmother",
+name:"BinaDevi Mandal",
 image:"/people/b.jpg",
 children:["C","D","E"]
 },
