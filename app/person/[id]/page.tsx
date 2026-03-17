@@ -1,18 +1,19 @@
-"use client"
-
 import { family } from "@/data/family"
 import PersonCard from "@/components/PersonCard"
-import { motion } from "framer-motion"
 
 export default function PersonPage({
-params
-}:{params:{id:string}}){
+  params,
+}: {
+  params: { id: string }
+}) {
 
 const person = family[params.id]
 
-if(!person) return <div>Not Found</div>
+if (!person) {
+  return <div style={{padding:40}}>Person not found</div>
+}
 
-return(
+return (
 
 <div className="container">
 
@@ -29,18 +30,13 @@ image={person.image}
 <>
 <h2>Children</h2>
 
-<motion.div
-className="grid"
-initial={{opacity:0,x:-100}}
-animate={{opacity:1,x:0}}
-transition={{duration:0.5}}
->
+<div className="grid">
 
-{person.children.map((id)=>{
+{person.children.map((id) => {
 
 const child = family[id]
 
-return(
+return (
 
 <PersonCard
 key={id}
@@ -53,7 +49,7 @@ image={child.image}
 
 })}
 
-</motion.div>
+</div>
 </>
 
 )}
